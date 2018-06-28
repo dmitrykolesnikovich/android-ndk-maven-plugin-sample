@@ -18,6 +18,6 @@ public class HelloJni extends Activity {
         setContentView(textView);
     }
 	
-    public native String stringFromJNI();
+    public static native String stringFromJNI();
 	
 }

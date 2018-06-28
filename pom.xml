@@ -42,8 +42,7 @@
 			<configuration>
 				<sdk>
 					<platform>26</platform>
-				</sdk>
-				<ndkArchitectures>arm64-v8a armeabi-v7a x86 x86_64</ndkArchitectures>
+				</sdk>				
 			</configuration>        
       </plugin>
     </plugins>
