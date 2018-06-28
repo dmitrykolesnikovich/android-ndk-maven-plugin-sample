@@ -1,0 +1,51 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>featurea</groupId>
+  <artifactId>android-ndk-maven-plugin-sample</artifactId>
+  <packaging>apk</packaging>
+  <version>1</version>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.android</groupId>
+      <artifactId>android</artifactId>
+      <scope>provided</scope>
+	   <version>4.4</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.simpligility.maven.plugins</groupId>
+        <artifactId>android-ndk-maven-plugin</artifactId>
+		<version>1.1.1-SNAPSHOT</version>
+        <executions>
+          <execution>
+            <id>build-native-code</id>
+            <goals>
+              <goal>ndk-build</goal>
+            </goals>
+          </execution>
+        </executions>
+		<configuration>
+            <architectures>arm64-v8a armeabi-v7a x86 x86_64</architectures>            
+            <additionalCommandline>V=1 -B</additionalCommandline>
+          </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.simpligility.maven.plugins</groupId>
+        <artifactId>android-maven-plugin</artifactId>
+		<version>4.5.0</version>
+			<extensions>true</extensions>
+			<configuration>
+				<sdk>
+					<platform>26</platform>
+				</sdk>
+				<ndkArchitectures>arm64-v8a armeabi-v7a x86 x86_64</ndkArchitectures>
+			</configuration>        
+      </plugin>
+    </plugins>
+  </build>
+</project>
